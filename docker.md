@@ -1,5 +1,9 @@
 # 启动一个mongo
-docker run -p 27017:27017 -v /f/mongo/data:/data/db -d mongo
+docker pull mongo
+
+linux: docker run -p 27017:27017 -v /root/data/mongo:/data/db -d --restart=always mongo 
+
+windows: docker run -p 27017:27017 -v /f/mongo/data:/data/db -d mongo
 
 # 启动一个swagger-editor 
 docker pull swaggerapi/swagger-editor
