@@ -14,3 +14,8 @@ docker run --rm -p 80:8080 swaggerapi/swagger-editor
 docker pull swaggerapi/swagger-ui
 
 docker run -p 80:8080 swaggerapi/swagger-ui
+
+# 启动nginx
+docker pull nginx
+
+docker run --name nginx -d -p 8001:80 --restart=always -v /root/data/nginx/file:/home/userfile -v /root/data/nginx/conf:/etc/nginx/conf.d nginx
