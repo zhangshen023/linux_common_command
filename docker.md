@@ -22,5 +22,5 @@ docker run --name nginx -d -p 8001:80 --restart=always -v /root/data/nginx/file:
 
 # 启动mysql
 
-docker run --name mysql5.7.23 -p 3306:3306 -v /data/mysql/datadir:/var/lib/mysql -v /data/mysql/conf.d:/etc/mysql/conf.d -e MYSQL_ROOT_PASSWORD=123456 -d --restart=always mysql:5.7.23
+docker run --name mysql5.7.23 -p 3306:3306 -v /etc/localtime:/etc/localtime -v /data/mysql/datadir:/var/lib/mysql -v /data/mysql/conf.d:/etc/mysql/conf.d -e MYSQL_ROOT_PASSWORD=123456 -d --restart=always mysql:5.7.23
 
