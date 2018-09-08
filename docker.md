@@ -20,3 +20,12 @@ docker pull nginx
 
 docker run --name nginx -d -p 8001:80 --restart=always -v /root/data/nginx/file:/home/userfile -v /root/data/nginx/conf:/etc/nginx/conf.d nginx
 
+# mysql 主myqsl容器
+
+sudo docker run -d -e MYSQL_ROOT_PASSWORD=123456 --name mysql-master  -v /Users/shen/Documents/docker-mysql-data/mysql-master:/var/lib/mysql -v /Users/shen/Documents/docker-mysql-data/my-master.cnf:/etc/mysql/my.cnf -p 3307:3306 mysql:5.7.23
+
+# mysql 从myqsl容器
+sudo docker run -d -e MYSQL_ROOT_PASSWORD=123456 --name mysql-slave1 -v /Users/shen/Documents/docker-mysql-data/mysql-slave1:/var/lib/mysql -v /Users/shen/Documents/docker-mysql-data/my-slave1.cnf:/etc/mysql/my.cnf -p 3308:3306 mysql:5.7.23
+
+
+
