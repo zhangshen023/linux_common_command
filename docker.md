@@ -28,4 +28,9 @@ sudo docker run -d -e MYSQL_ROOT_PASSWORD=123456 --name mysql-master  -v /Users/
 sudo docker run -d -e MYSQL_ROOT_PASSWORD=123456 --name mysql-slave1 -v /Users/shen/Documents/docker-mysql-data/mysql-slave1:/var/lib/mysql -v /Users/shen/Documents/docker-mysql-data/my-slave1.cnf:/etc/mysql/my.cnf -p 3308:3306 mysql:5.7.23
 
 
+# 启动mysql
 
+docker run --name mysql5.7.23 -p 3306:3306 -v /etc/localtime:/etc/localtime -v /data/mysql/datadir:/var/lib/mysql -v /data/mysql/conf.d:/etc/mysql/conf.d -e MYSQL_ROOT_PASSWORD=123456 -d --restart=always mysql:5.7.23
+
+# 启动redis
+docker run --name redis-test -p 6379:6379 -d --restart=always redis:latest redis-server --appendonly yes --requirepass "your passwd"
